@@ -25,46 +25,30 @@ const Registration = () => {
               lg="6"
               className="order-2 order-lg-1 d-flex flex-column align-items-center"
             >
-              <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                Sign up
-              </p>
+              <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registration</p>
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size="lg" />
-                <MDBInput
-                  label="Your Name"
-                  id="form1"
-                  type="text"
-                  className="w-100"
-                />
+                <MDBInput label="Your Name" id="form1" type="text" className="w-100" required/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size="lg" />
-                <MDBInput label="Your Email" id="form2" type="email" />
+                <MDBInput className='' label="Your Email" id="form2" type="email" required />
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size="lg" />
-                <MDBInput label="Password" id="form3" type="password" />
+                <MDBInput label="Password" id="form3" type="password" required />
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="key me-3" size="lg" />
-                <MDBInput
-                  label="Repeat your password"
-                  id="form4"
-                  type="password"
-                />
+                <MDBInput label="Repeat your password" id="form4" type="password" />
               </div>
 
               <div className="mb-4">
-                <MDBCheckbox
-                  name="flexCheck"
-                  value=""
-                  id="flexCheckDefault"
-                  label="I accept terms and privacy policy"
-                />
+                <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="I accept terms and privacy policy" />
               </div>
 
               <MDBBtn className="mb-4" size="lg">
