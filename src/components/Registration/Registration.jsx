@@ -54,7 +54,7 @@ const Registration = () => {
               <MDBBtn className="mb-4" size="lg">
                 Register
               </MDBBtn>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <Link to="/login" class="link-danger">Login</Link></p>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account! please <Link to="/login" class="link-danger">Login</Link></p>
             </MDBCol>
 
             <MDBCol

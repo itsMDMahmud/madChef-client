@@ -31,9 +31,10 @@ const Header = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <nav className="justify-content-center d-flex flex-grow-1 pe-3">
-                <NavLink className="fs-4 mx-2" to="/"> Home </NavLink>                
-                <NavLink className="fs-4 mx-2" to=""> Blog </NavLink>
-                <NavLink className="fs-4 mx-2" to=""> Link </NavLink>
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2' : 'fs-4 mx-2')} to="/">Home </NavLink>                
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/blog">Blog </NavLink>                
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/">Link </NavLink>                
+                
                 </nav>                
               </Offcanvas.Body>
             </Navbar.Offcanvas>
