@@ -15,6 +15,8 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Blog from './components/Blog/Blog.jsx';
+import AllChef from './components/AllChef/AllChef.jsx';
+import ChefDetails from './components/ChefDetails/ChefDetails.jsx';
 
 
 
@@ -26,7 +28,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5500/chefdata'),
       },
       {
         path: 'registration',
@@ -40,9 +43,14 @@ const router = createBrowserRouter([
         path: 'blog',
         element: <Blog></Blog>
       },
+      {
+        path: 'chefdetails/:id',
+        element: <ChefDetails></ChefDetails>
+      }
     ]
     
   },
+  
 ]);
 
 
