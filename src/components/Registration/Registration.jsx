@@ -33,6 +33,11 @@ const Registration = () => {
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
+                <MDBIcon fas icon="image me-3" size="lg" />
+                <MDBInput label="Photo URL" id="form4" type="text" required />
+              </div>
+
+              <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size="lg" />
                 <MDBInput className='' label="Your Email" id="form2" type="email" required />
               </div>
@@ -40,12 +45,7 @@ const Registration = () => {
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size="lg" />
                 <MDBInput label="Password" id="form3" type="password" required />
-              </div>
-
-              <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="key me-3" size="lg" />
-                <MDBInput label="Repeat your password" id="form4" type="password" />
-              </div>
+              </div>              
 
               <div className="mb-4">
                 <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="I accept terms and privacy policy" />

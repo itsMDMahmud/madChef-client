@@ -1,0 +1,12 @@
+.active{
+    font-size: 25px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #081b29;
+    
+  }
+  .nav-link{
+    margin: 15px;
+    text-decoration: none;
+    font-size: large;
+}

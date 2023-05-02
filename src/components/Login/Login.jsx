@@ -30,16 +30,13 @@ const Login = () => {
                 <div class="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
                   <p class="lead fw-normal mb-0 me-3">Sign in with</p>
                   <button type="button" class="btn btn-primary btn-floating mx-1" >
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-google"></i>
                   </button>
 
                   <button type="button" class="btn btn-primary btn-floating mx-1" >
                     <i class="fab fa-github"></i>
                   </button>
-
-                  <button type="button" class="btn btn-primary btn-floating mx-1" >
-                    <i class="fab fa-linkedin-in"></i>
-                  </button>
+                  
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">

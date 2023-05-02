@@ -1,0 +1,13 @@
+.error-page{
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.error-animation{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.error-btn-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

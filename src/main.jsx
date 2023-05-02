@@ -13,6 +13,7 @@ import Registration from './components/Registration/Registration.jsx';
 import Login from './components/Login/Login.jsx';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage></Homepage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

@@ -12,7 +12,7 @@ const Home = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First Foods</h3>
+            <h3>Fast Foods</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={2000}>
