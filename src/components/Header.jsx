@@ -4,10 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
     return (
         <>
@@ -34,7 +32,7 @@ const Header = () => {
                   
                 </Nav>
                 <Form className="d-flex">                  
-                <button type="button" className="btn btn-outline-success">Login</button>
+                <button type="button" className="btn btn-primary">Primary</button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
