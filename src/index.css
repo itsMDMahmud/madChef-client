@@ -21,6 +21,19 @@ footer{
   border: 1px solid rgba(128, 128, 128, 0.5);
 
 }
+.reg-main-div{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  align-items: center;
+}
+.reg-main-div img{
+  max-width: 100%;
+}
 
 
 

@@ -1,34 +1,19 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBIcon,
-  MDBCheckbox,
-} from "mdb-react-ui-kit";
-import { Button, Form } from "react-bootstrap";
+import React from "react";
+import { Button, Container, Form } from "react-bootstrap";
 
 const Login = () => {
   return (
     <>
-      <Form>
-      <MDBContainer fluid>
-        <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
-          <MDBCardBody>
-            <MDBRow>
-              <MDBCol
-                md="10"
-                lg="6"
-                className="order-2 order-lg-2 d-flex flex-column align-items-center" >
-                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> Login </p>
-
-                <div className="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
+      <div className="container reg-main-div">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          alt="" />
+        <div>
+          <h1>Login</h1>
+          <Form>
+            
+          <div className="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
                   <p className="lead fw-normal mb-0 me-3">Sign in with</p>
                   <button type="button" className="btn btn-primary btn-floating mx-1" >
                     <i className="fab fa-google"></i>
@@ -40,33 +25,50 @@ const Login = () => {
                   
                 </div>
 
-                <div className="d-flex flex-row align-items-center mb-4">
-                  <MDBIcon fas icon="envelope me-3" size="lg" />
-                  <input className="form-input" placeholder="Your Email" id="form2" type="email" required />
-                </div>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
 
-                <div className="d-flex flex-row align-items-center mb-4">
-                  <MDBIcon fas icon="lock me-3" size="lg" />
-                  <input className="form-input" placeholder="Password" id="form3" type="password" required/>
-                </div>
-
-                <div className="mb-4">
-                  <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="Remember me" />
-                </div>
-
-                <Button className="mb-4" size="lg"> Login </Button>
-                <p className="small fw-bold mt-2 pt-1 mb-0"> Don't have an account?{" "}
-                  <Link to="/registration" className="link-danger"> Registration </Link> here. </p>
-              </MDBCol>
-
-              <MDBCol md="10" lg="6" className="order-1 order-lg-1 d-flex align-items-center" >
-                <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" fluid />
-              </MDBCol>
-            </MDBRow>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBContainer>
-      </Form>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check
+                type="checkbox"
+                name="accept"
+                label={
+                  <>
+                    Accept <Link to="/terms">terms and conditions</Link>
+                  </>
+                }
+              />
+            </Form.Group>
+            <Button variant="primary" disabled="" type="submit">Login</Button>
+            <br />
+            {/* <Form.Text className="text-secondary">
+          {" "}
+          Already have an account?
+          <Link to="/login">Login</Link>
+        </Form.Text> */}
+            <p className="small fw-bold mt-2 pt-1 mb-0"> Don't have an account! please <Link to="/registration" className="link-danger"> Registration here</Link>
+            </p>
+            <Form.Text className="text-success">.</Form.Text>
+            <Form.Text className="text-danger">.</Form.Text>
+          </Form>
+        </div>        
+      </div>
     </>
   );
 };

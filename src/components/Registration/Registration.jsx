@@ -1,78 +1,89 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBInput,
-  MDBIcon,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
-import { Button, Form } from 'react-bootstrap';
+import { useContext } from "react";
+import { Button, Container, Form } from "react-bootstrap";
+import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardImage, MDBInput, MDBIcon, MDBCheckbox } from 'mdb-react-ui-kit';
 
 const Registration = () => {
+
+  const handleRegister = event => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(name, photo, email, password);
+  }
+
   return (
-    <Form>
-    <MDBContainer fluid>
-      <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
-        <MDBCardBody>
-          <MDBRow>
-            <MDBCol
-              md="10"
-              lg="6"
-              className="order-2 order-lg-1 d-flex flex-column align-items-center"
-            >
-              <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registration</p>
+    
+    <div className='container reg-main-div'>
+      <div>
+        <h1>Registration</h1>
+      <Form className='' onSubmit={handleRegister}>
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+          />
+        </Form.Group>        
+        <Form.Group className="mb-3" controlId="formBasicURL">
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control
+            type="text"
+            name="photo"
+            placeholder="Enter url"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
 
-              <div className="d-flex flex-row align-items-center mb-4 ">
-                <MDBIcon fas icon="user me-3" size="lg" />
-                <input className="form-input" placeholder="Your Name" id="form1" type="text" required/>
-              </div>
-
-              <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="image me-3" size="lg" />
-                <input className="form-input" placeholder="Photo URL" id="form4" type="text" required />
-              </div>
-
-              <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="envelope me-3" size="lg" />
-                <input className="form-input" placeholder="Your Email" id="form2" type="email" required />
-              </div>
-
-              <div className="d-flex flex-row align-items-center mb-4">
-                <MDBIcon fas icon="lock me-3" size="lg" />
-                <input className="form-input" placeholder="Password" id="form3" type="password" required />
-              </div>              
-
-              <div className="mb-4">
-                <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="I accept terms and privacy policy" />
-              </div>
-
-              {/* <MDBBtn className="mb-4" size="lg"> Register </MDBBtn> */}
-              <Button className="mb-4" size="lg"> Registration </Button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account! please <Link to="/login" class="link-danger">Login</Link></p>
-            </MDBCol>
-
-            <MDBCol
-              md="10"
-              lg="6"
-              className="order-1 order-lg-2 d-flex align-items-center"
-            >
-              <MDBCardImage
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                fluid
-              />
-            </MDBCol>
-          </MDBRow>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBContainer>
-    </Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check   
+          type="checkbox" 
+          name="accept" 
+          label={<>Accept <Link to="/terms">terms and conditions</Link></>} />
+        </Form.Group>
+        <Button variant="primary" disabled= "" type="submit">
+          {" "}
+          Submit{" "}
+        </Button>
+        <br />
+        {/* <Form.Text className="text-secondary">
+          {" "}
+          Already have an account?
+          <Link to="/login">Login</Link>
+        </Form.Text> */}
+        <p className="small fw-bold mt-2 pt-1 mb-0">Already have an account! please <Link to="/login" className="link-danger">Login</Link></p>
+        <Form.Text className="text-success">.</Form.Text>
+        <Form.Text className="text-danger">.</Form.Text>
+      </Form>
+      </div>
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="" />
+    </div>
   );
 };
 
