@@ -3,13 +3,45 @@ import "./login.css";
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { AuthContext } from "../../providers/AuthProvider";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log( 'login page location',location);
+  // console.log( 'login page location',location);
   const from = location.state?.from?.pathname || '/';
+
+
+  const handleGoogleSignIn = () => {
+    // console.log('google is coming');
+    signInWithPopup(auth, googleProvider)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    }) 
+    .catch(error => {
+      console.log('error', error.message);
+    })
+  }
+
+
+  const handleGithubSignIn = () => {
+    // console.log('github is coming');
+    signInWithPopup(auth, githubProvider)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    }) 
+    .catch(error => {
+      console.log('error', error.message);
+    })
+  }
+
 
   const handleLogin = event => {
     event.preventDefault();
@@ -41,11 +73,11 @@ const Login = () => {
             
           <div className="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
                   <p className="lead fw-normal mb-0 me-3">Sign in with</p>
-                  <button type="button" className="btn btn-primary btn-floating mx-1" >
+                  <button onClick={handleGoogleSignIn} type="button" title="Login with Google" className="btn btn-primary btn-floating mx-1" >
                     <i className="fab fa-google"></i>
                   </button>
 
-                  <button type="button" className="btn btn-primary btn-floating mx-1" >
+                  <button onClick={handleGithubSignIn} type="button" title="login with Github" className="btn btn-primary btn-floating mx-1" >
                     <i className="fab fa-github"></i>
                   </button>
                   
@@ -74,12 +106,7 @@ const Login = () => {
               <Form.Check
                 type="checkbox"
                 name="accept"
-                label={
-                  <>
-                    Accept <Link to="/terms">terms and conditions</Link>
-                  </>
-                }
-              />
+                label={<> Remember me </>} />
             </Form.Group>
             <Button variant="primary" disabled="" type="submit">Login</Button>
             <br />

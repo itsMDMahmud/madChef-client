@@ -64,7 +64,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton1Disabled} onClick={() => { 
               handleClick1(); 
               notify1();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
+             }} className="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
             <ToastContainer />
         </div>
         <div className="recipe-details position-relative">
@@ -78,7 +78,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton2Disabled} onClick={() => { 
               handleClick2(); 
               notify2();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
+             }} className="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
         </div>
         <div className="recipe-details position-relative">
             <img src={chefData?.recipe3?.image} alt="" />
@@ -91,7 +91,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton3Disabled} onClick={() => { 
               handleClick3(); 
               notify3();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
+             }} className="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
         </div>
         
        
