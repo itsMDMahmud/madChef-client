@@ -9,14 +9,15 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-  MDBInput,
   MDBIcon,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
+import { Button, Form } from "react-bootstrap";
 
 const Login = () => {
   return (
     <>
+      <Form>
       <MDBContainer fluid>
         <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
           <MDBCardBody>
@@ -27,35 +28,35 @@ const Login = () => {
                 className="order-2 order-lg-2 d-flex flex-column align-items-center" >
                 <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> Login </p>
 
-                <div class="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
-                  <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                  <button type="button" class="btn btn-primary btn-floating mx-1" >
-                    <i class="fab fa-google"></i>
+                <div className="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
+                  <p className="lead fw-normal mb-0 me-3">Sign in with</p>
+                  <button type="button" className="btn btn-primary btn-floating mx-1" >
+                    <i className="fab fa-google"></i>
                   </button>
 
-                  <button type="button" class="btn btn-primary btn-floating mx-1" >
-                    <i class="fab fa-github"></i>
+                  <button type="button" className="btn btn-primary btn-floating mx-1" >
+                    <i className="fab fa-github"></i>
                   </button>
                   
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">
                   <MDBIcon fas icon="envelope me-3" size="lg" />
-                  <MDBInput label="Your Email" id="form2" type="email" required />
+                  <input className="form-input" placeholder="Your Email" id="form2" type="email" required />
                 </div>
 
                 <div className="d-flex flex-row align-items-center mb-4">
                   <MDBIcon fas icon="lock me-3" size="lg" />
-                  <MDBInput label="Password" id="form3" type="password" required/>
+                  <input className="form-input" placeholder="Password" id="form3" type="password" required/>
                 </div>
 
                 <div className="mb-4">
                   <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="Remember me" />
                 </div>
 
-                <MDBBtn className="mb-4" size="lg"> Login </MDBBtn>
-                <p class="small fw-bold mt-2 pt-1 mb-0"> Don't have an account?{" "}
-                  <Link to="/registration" class="link-danger"> Registration </Link> here. </p>
+                <Button className="mb-4" size="lg"> Login </Button>
+                <p className="small fw-bold mt-2 pt-1 mb-0"> Don't have an account?{" "}
+                  <Link to="/registration" className="link-danger"> Registration </Link> here. </p>
               </MDBCol>
 
               <MDBCol md="10" lg="6" className="order-1 order-lg-1 d-flex align-items-center" >
@@ -65,6 +66,7 @@ const Login = () => {
           </MDBCardBody>
         </MDBCard>
       </MDBContainer>
+      </Form>
     </>
   );
 };

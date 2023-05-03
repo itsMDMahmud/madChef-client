@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -8,9 +8,11 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, NavLink } from "react-router-dom";
 import { FaTh, FaUser, FaUserAlt, FaUserCircle,  } from "react-icons/fa";
 import { ListGroup } from "react-bootstrap";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Header = () => {
+  const {user} = useContext(AuthContext);
   return (
     <>
       {["sm"].map((expand) => (
@@ -39,12 +41,16 @@ const Header = () => {
                 </nav>                
               </Offcanvas.Body>
             </Navbar.Offcanvas>
-            <Form className=" d-flex align-items-center">
+            {user && <Form className=" d-flex align-items-center">
               <FaUserCircle className="fs-2 me-2"></FaUserCircle>
-              <NavLink to='/login'><button type="button" className="btn btn-primary">
-                Login
-              </button></NavLink>
-            </Form>
+            </Form>}
+            {user ? 
+              (<button type="button" className="btn btn-secondary"> Log Out </button>) 
+            : 
+              (<NavLink to='/login'>                
+              <button type="button" className="btn btn-primary"> Login </button>
+            </NavLink>)
+            }
           </Container>
         </Navbar>
       ))}

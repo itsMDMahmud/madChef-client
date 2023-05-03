@@ -13,9 +13,11 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import { Button, Form } from 'react-bootstrap';
 
 const Registration = () => {
   return (
+    <Form>
     <MDBContainer fluid>
       <MDBCard className="text-black m-5" style={{ borderRadius: "25px" }}>
         <MDBCardBody>
@@ -29,31 +31,30 @@ const Registration = () => {
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size="lg" />
-                <MDBInput label="Your Name" id="form1" type="text" className="w-100" required/>
+                <input className="form-input" placeholder="Your Name" id="form1" type="text" required/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="image me-3" size="lg" />
-                <MDBInput label="Photo URL" id="form4" type="text" required />
+                <input className="form-input" placeholder="Photo URL" id="form4" type="text" required />
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="envelope me-3" size="lg" />
-                <MDBInput className='' label="Your Email" id="form2" type="email" required />
+                <input className="form-input" placeholder="Your Email" id="form2" type="email" required />
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size="lg" />
-                <MDBInput label="Password" id="form3" type="password" required />
+                <input className="form-input" placeholder="Password" id="form3" type="password" required />
               </div>              
 
               <div className="mb-4">
                 <MDBCheckbox name="flexCheck" value="" id="flexCheckDefault" label="I accept terms and privacy policy" />
               </div>
 
-              <MDBBtn className="mb-4" size="lg">
-                Register
-              </MDBBtn>
+              {/* <MDBBtn className="mb-4" size="lg"> Register </MDBBtn> */}
+              <Button className="mb-4" size="lg"> Registration </Button>
               <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account! please <Link to="/login" class="link-danger">Login</Link></p>
             </MDBCol>
 
@@ -71,6 +72,7 @@ const Registration = () => {
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>
+    </Form>
   );
 };
 
