@@ -12,7 +12,14 @@ import { AuthContext } from "../providers/AuthProvider";
 
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch(error => console.log(error))
+  }
+  
   return (
     <>
       {["sm"].map((expand) => (
@@ -45,7 +52,7 @@ const Header = () => {
               <FaUserCircle className="fs-2 me-2"></FaUserCircle>
             </Form>}
             {user ? 
-              (<button type="button" className="btn btn-secondary"> Log Out </button>) 
+              (<button onClick={handleLogOut} type="button" className="btn btn-secondary"> Log Out </button>) 
             : 
               (<NavLink to='/login'>                
               <button type="button" className="btn btn-primary"> Login </button>
