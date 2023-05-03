@@ -13,7 +13,7 @@ const AllChef = ({singleChef}) => {
       <h3>{name}</h3>
       <p>Experience: {experience_years} years</p>
       <p>Numburs of recipe: 3</p>
-      <p>Likes {likes}</p>
+      <p>Likes {likes} million</p>
       {/* <button className="chef-details btn btn-info">View details</button> */}
       <Link to={`chefdetails/${id}`}><button className="chef-details btn btn-info">View Details</button></Link>
     </div>

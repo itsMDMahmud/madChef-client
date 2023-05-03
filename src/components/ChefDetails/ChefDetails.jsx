@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ChefDetails = () => {
   const { id } = useParams();
@@ -20,6 +23,24 @@ const ChefDetails = () => {
   // const { name, specialty, rating } = chefData;
   // console.log();
 
+  const [isButton1Disabled, setIsButton1Disabled] = useState(false);
+  const [isButton2Disabled, setIsButton2Disabled] = useState(false);
+  const [isButton3Disabled, setIsButton3Disabled] = useState(false);
+
+  function handleClick1() {
+    setIsButton1Disabled(true);
+  }
+  function handleClick2() {
+    setIsButton2Disabled(true);
+  }
+  function handleClick3() {
+    setIsButton3Disabled(true);
+  }
+
+  const notify1 = () => toast("Added first recipe to your favourit list!");
+  const notify2 = () => toast("Added second recipe to your favourit list!");
+  const notify3 = () => toast("Added third recipe to your favourit list!");
+
   return (
     <div className="container">
       <div className="chef-details-main d-flex justify-content-between align-items-center">        
@@ -31,8 +52,8 @@ const ChefDetails = () => {
         </div>
         <img src={chefData?.img} alt="" />
       </div>
-      <div className="recipie-sections">
-        <div className="recipe-details">
+      <div className="recipie-sections">      
+        <div className="recipe-details position-relative">
             <img src={chefData?.recipe1?.image} alt="" />
             <h2>{chefData?.recipe1?.recipe_name}</h2>
             <h3>Ratings: {chefData?.recipe1?.rating}</h3>
@@ -40,8 +61,13 @@ const ChefDetails = () => {
             <p>{chefData?.recipe1?.ingredients}</p>
             <h4>Cooking Method:</h4>
             <p>{chefData?.recipe1?.cooking_method}</p>
+            <button type="button" disabled={isButton1Disabled} onClick={() => { 
+              handleClick1(); 
+              notify1();
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
+            <ToastContainer />
         </div>
-        <div className="recipe-details">
+        <div className="recipe-details position-relative">
             <img src={chefData?.recipe2?.image} alt="" />
             <h2>{chefData?.recipe2?.recipe_name}</h2>
             <h3>Ratings: {chefData?.recipe2?.rating}</h3>
@@ -49,8 +75,12 @@ const ChefDetails = () => {
             <p>{chefData?.recipe2?.ingredients}</p>
             <h4>Cooking Method:</h4>
             <p>{chefData?.recipe2?.cooking_method}</p>
+            <button type="button" disabled={isButton2Disabled} onClick={() => { 
+              handleClick2(); 
+              notify2();
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
         </div>
-        <div className="recipe-details">
+        <div className="recipe-details position-relative">
             <img src={chefData?.recipe3?.image} alt="" />
             <h2>{chefData?.recipe3?.recipe_name}</h2>
             <h3>Ratings: {chefData?.recipe3?.rating}</h3>
@@ -58,6 +88,10 @@ const ChefDetails = () => {
             <p>{chefData?.recipe3?.ingredients}</p>
             <h4>Cooking Method:</h4>
             <p>{chefData?.recipe3?.cooking_method}</p>
+            <button type="button" disabled={isButton3Disabled} onClick={() => { 
+              handleClick3(); 
+              notify3();
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
         </div>
         
        
