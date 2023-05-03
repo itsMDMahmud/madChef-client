@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import AllChef from "../AllChef/AllChef";
 import { useLoaderData } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 
 const Home = () => {
@@ -21,41 +21,54 @@ const Home = () => {
       <Button className="d-flex align-items-center" onClick={handlePrint} >download Pdf</Button>
     </div>
       <div ref={componentRef}>
-      <section className="my-5 container" >
+      <Container>
+        <Row>
+          <Col lg={3}>
+              <img className="first-img" src="https://i.ibb.co/1K8cFQ7/long-flyer-2.jpg" alt="" />
+          </Col>
+          <Col lg={6}>
+          <section className="my-5 container" >
         <Carousel className="">
           <Carousel.Item interval={2000}>
             <img
               className="d-block w-100 mx-auto "
-              src="https://i.ibb.co/rHkVsVW/wp3108440.jpg"
+              src="https://i.ibb.co/jD1rs8V/4201010.jpg"
               alt="First slide"
             />
             <Carousel.Caption className="bg-transparent d-inline">
-              <h3 className="">Fast Foods</h3>
+              <h3 className="">Apple Juice</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
             <img
               className="d-block w-100 mx-auto"
-              src="https://i.ibb.co/w7NDsBw/wp3982991-food-wallpapers.jpg"
+              src="https://i.ibb.co/19TvtZ8/1370528.jpg"
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Colourful Sweets</h3>
+              <h3>Green Ambrossia</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={2000}>
             <img
               className="d-block w-100 mx-auto"
-              src="https://i.ibb.co/PTFDHqy/wp3983057-1.jpg"
+              src="https://i.ibb.co/HgpzX8t/4201250.jpg"
               alt="Third slide"
             />
             <Carousel.Caption className="">
-              <h3>Delicious Pizza</h3>
+              <h3>Fruits Rolls</h3>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel>
-        
+        </Carousel>        
       </section>
+      <h4 className="quotes">“The food you eat can be either the safest and most powerful form of medicine or the slowest form of poison”  -Ann Wigmore.</h4>
+          </Col>
+          <Col lg={3}>
+          <img className="first-img" src="https://i.ibb.co/M6nPCLB/long-flyer-1.jpg" alt="" />
+          </Col>
+        </Row>        
+      </Container>
+      
 
       <section className="container chef-section">
         <h1 className="text-center my-5">Top American Chefs</h1>

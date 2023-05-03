@@ -15,6 +15,13 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
+.first-img{
+  height: 500px;
+}
+.quotes{
+  text-align: center;
+  margin: 25px;
+}
 footer{
   background-color: #081b29;
   color: white;
