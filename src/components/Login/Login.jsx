@@ -1,12 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 const Login = () => {
+  const [user, setUser] = useState(null);
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -21,8 +22,9 @@ const Login = () => {
     // console.log('google is coming');
     signInWithPopup(auth, googleProvider)
     .then(result => {
-      const user = result.user;
-      console.log(user);
+      const googleUser = result.user;
+      console.log(googleUser);
+      setUser(googleUser);
     }) 
     .catch(error => {
       console.log('error', error.message);
@@ -35,7 +37,7 @@ const Login = () => {
     signInWithPopup(auth, githubProvider)
     .then(result => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
     }) 
     .catch(error => {
       console.log('error', error.message);
@@ -49,12 +51,12 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
 
     signIn(email, password)
     .then(result => {
       const LoggedUser = result.user;
-      console.log(LoggedUser);
+      // console.log(LoggedUser);
       navigate(from, {replace: true})
     })
     .catch(error => {

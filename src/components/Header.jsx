@@ -19,6 +19,7 @@ const Header = () => {
     .then()
     .catch(error => console.log(error))
   }
+  // console.log(user);  
 
   return (
     <>
@@ -49,7 +50,9 @@ const Header = () => {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             {user && <Form className=" d-flex align-items-center">
-              <FaUserCircle className="fs-2 me-2"></FaUserCircle>
+              
+              <img src={user?.photoURL} alt="img" title={user.displayName} className="header-img" />              
+              {/* <FaUserCircle className="fs-2 me-2"></FaUserCircle> */}
             </Form>}
             {user ? 
               (<button onClick={handleLogOut} type="button" className="btn btn-secondary"> Log Out </button>) 
@@ -65,7 +68,34 @@ const Header = () => {
   );
 };
 
+
 export default Header;
 //<NavLink className="fs-4 mx-2" to="/"> Home </NavLink>
 //<NavLink className="fs-4 mx-2" to=""> Blog </NavLink>
 //<NavLink className="fs-4 mx-2" to=""> Link </NavLink>
+
+//  <div style={{ position: "relative", display: "inline-block" }}>
+// <img src={props.src} alt={props.alt}
+// onMouseEnter={handleMouseEnter}
+// onMouseLeave={handleMouseLeave}
+// style={{ width: "100%", height: "auto" }}
+// />
+// {showTooltip && (
+// <div
+//   style={{
+//     position: "absolute",
+//     top: "100%",
+//     left: "50%",
+//     transform: "translateX(-50%)",
+//     backgroundColor: "black",
+//     color: "white",
+//     padding: "5px",
+//     borderRadius: "5px",
+//     whiteSpace: "nowrap",
+//     zIndex: "1",
+//   }}
+// >
+//   {props.userName}
+// </div>
+// )}
+// </div>

@@ -9,6 +9,12 @@ body {
   /* background-color: #081b29; */
   color: black;
 }
+.header-img{
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
 footer{
   background-color: #081b29;
   color: white;
