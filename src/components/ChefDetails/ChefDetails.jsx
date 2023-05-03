@@ -37,9 +37,9 @@ const ChefDetails = () => {
     setIsButton3Disabled(true);
   }
 
-  const notify1 = () => toast("Added first recipe to your favourit list!");
-  const notify2 = () => toast("Added second recipe to your favourit list!");
-  const notify3 = () => toast("Added third recipe to your favourit list!");
+  const notify1 = () => toast("Added first recipe to your favourite list!");
+  const notify2 = () => toast("Added second recipe to your favourite list!");
+  const notify3 = () => toast("Added third recipe to your favourite list!");
 
   return (
     <div className="container">
@@ -64,7 +64,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton1Disabled} onClick={() => { 
               handleClick1(); 
               notify1();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
             <ToastContainer />
         </div>
         <div className="recipe-details position-relative">
@@ -78,7 +78,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton2Disabled} onClick={() => { 
               handleClick2(); 
               notify2();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
         </div>
         <div className="recipe-details position-relative">
             <img src={chefData?.recipe3?.image} alt="" />
@@ -91,7 +91,7 @@ const ChefDetails = () => {
             <button type="button" disabled={isButton3Disabled} onClick={() => { 
               handleClick3(); 
               notify3();
-             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Success</button>
+             }} class="btn btn-outline-success position-absolute bottom-0 end-0">Favourite</button>
         </div>
         
        
