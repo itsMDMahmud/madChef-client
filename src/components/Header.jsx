@@ -19,7 +19,7 @@ const Header = () => {
     .then()
     .catch(error => console.log(error))
   }
-  
+
   return (
     <>
       {["sm"].map((expand) => (
@@ -43,7 +43,7 @@ const Header = () => {
                 <nav className="justify-content-center d-flex flex-grow-1 pe-3">
                 <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2' : 'fs-4 mx-2')} to="/">Home </NavLink>                
                 <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/blog">Blog </NavLink>                
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/">Link </NavLink>                
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/">About us </NavLink>                
                 
                 </nav>                
               </Offcanvas.Body>
