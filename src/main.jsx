@@ -19,6 +19,7 @@ import AllChef from './components/AllChef/AllChef.jsx';
 import ChefDetails from './components/ChefDetails/ChefDetails.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import Terms from './components/Terms/Terms.jsx';
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: 'chefdetails/:id',
         element: <PrivateRoute> <ChefDetails></ChefDetails> </PrivateRoute>
+      },
+      {
+        path: 'terms',
+        element: <Terms></Terms>
       }
     ]
     
