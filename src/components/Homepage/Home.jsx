@@ -1,15 +1,27 @@
 import Carousel from "react-bootstrap/Carousel";
-import React from "react";
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import AllChef from "../AllChef/AllChef";
 import { useLoaderData } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 
 const Home = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
+
   const allData = useLoaderData();
 
   //   console.log(allData);
   return (
     <>
-      <section className="my-5 container">
+    <div  className="container d-flex align-items-center justify-content-center" >
+      <Button className="d-flex align-items-center" onClick={handlePrint} >download Pdf</Button>
+    </div>
+      <div ref={componentRef}>
+      <section className="my-5 container" >
         <Carousel className="">
           <Carousel.Item interval={2000}>
             <img
@@ -53,6 +65,7 @@ const Home = () => {
           ))}
         </div>
       </section>
+      </div>
     </>
   );
 };

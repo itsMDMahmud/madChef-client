@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -19,7 +19,7 @@ const Header = () => {
     .then()
     .catch(error => console.log(error))
   }
-  // console.log(user);  
+  // console.log(user); 
 
   return (
     <>
@@ -43,8 +43,8 @@ const Header = () => {
               <Offcanvas.Body>
                 <nav className="justify-content-center d-flex flex-grow-1 pe-3">
                 <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2' : 'fs-4 mx-2')} to="/">Home </NavLink>                
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/blog">Blog </NavLink>                
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/">About us </NavLink>                
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/blog">Blog </NavLink>     
+                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="">About us </NavLink>     
                 
                 </nav>                
               </Offcanvas.Body>
