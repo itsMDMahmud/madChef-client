@@ -1,6 +1,18 @@
+*{
+  /* background-color: #081b29;
+  color: white; */
+  
+}
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  /* background-color: #081b29; */
 }
+footer{
+  background-color: #081b29;
+}
+
+
+
 .chef-details {
   margin: 20px 0 10px;
   padding: 20px 0;
@@ -22,16 +34,44 @@ body {
 }
 .recipie-sections{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  
+}
+.chef-details-main{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 20px;
+  background-color: #081b2917;
+  color: black;
+  margin-bottom: 30px;
+}
+.chef-details-main h1{
+  font-weight: bold;
+}
+.chef-details-main img{
+  border-radius: 15px;
 }
 .recipe-details{
+  color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:start;
   /* justify-content: space-between; */
-  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
 }
+.recipe-details img{
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+
+
+
 @media (max-width: 576px) {
   .all-chefs {
     display: flex;
@@ -50,3 +90,4 @@ body {
   .chef-details {
   }
 }
+/* #081b29 */

@@ -22,8 +22,8 @@ const ChefDetails = () => {
 
   return (
     <div className="container">
-      <div className="d-flex justify-content-between align-items-center">        
-        <div>
+      <div className="chef-details-main d-flex justify-content-between align-items-center">        
+        <div className="">
           <h1>{chefData?.name}</h1>
           <h4>Experience: {chefData?.experience_years} years</h4>
           <h5>Likes {chefData?.likes} million</h5>
@@ -35,22 +35,28 @@ const ChefDetails = () => {
         <div className="recipe-details">
             <img src={chefData?.recipe1?.image} alt="" />
             <h2>{chefData?.recipe1?.recipe_name}</h2>
-            <h4>Ratings: {chefData?.recipe1?.rating}</h4>
-            <h5>{chefData?.recipe1?.ingredients}</h5>
+            <h3>Ratings: {chefData?.recipe1?.rating}</h3>
+            <h4>Ingredients:</h4>
+            <p>{chefData?.recipe1?.ingredients}</p>
+            <h4>Cooking Method:</h4>
             <p>{chefData?.recipe1?.cooking_method}</p>
         </div>
         <div className="recipe-details">
             <img src={chefData?.recipe2?.image} alt="" />
             <h2>{chefData?.recipe2?.recipe_name}</h2>
-            <h4>Ratings: {chefData?.recipe2?.rating}</h4>
-            <h5>{chefData?.recipe2?.ingredients}</h5>
+            <h3>Ratings: {chefData?.recipe2?.rating}</h3>
+            <h4>Ingredients:</h4>
+            <p>{chefData?.recipe2?.ingredients}</p>
+            <h4>Cooking Method:</h4>
             <p>{chefData?.recipe2?.cooking_method}</p>
         </div>
         <div className="recipe-details">
             <img src={chefData?.recipe3?.image} alt="" />
             <h2>{chefData?.recipe3?.recipe_name}</h2>
-            <h4>Ratings: {chefData?.recipe3?.rating}</h4>
-            <h5>{chefData?.recipe3?.ingredients}</h5>
+            <h3>Ratings: {chefData?.recipe3?.rating}</h3>
+            <h4>Ingredients:</h4>
+            <p>{chefData?.recipe3?.ingredients}</p>
+            <h4>Cooking Method:</h4>
             <p>{chefData?.recipe3?.cooking_method}</p>
         </div>
         
