@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardImage, MDBInput, MDBIcon, MDBCheckbox } from 'mdb-react-ui-kit';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Registration = () => {
+  const { createUser } = useContext(AuthContext);
 
   const handleRegister = event => {
     event.preventDefault();
@@ -16,6 +18,15 @@ const Registration = () => {
     const password = form.password.value;
 
     console.log(name, photo, email, password);
+
+    createUser(email, password)
+    .then(result => {
+      const createdUser = result.user;
+      console.log(createdUser);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
   return (

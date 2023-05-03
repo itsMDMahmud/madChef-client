@@ -1,9 +1,31 @@
 import { Link } from "react-router-dom";
 import "./login.css";
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const {signIn} = useContext(AuthContext);
+
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password);
+
+    signIn(email, password)
+    .then(result => {
+      const LoggedUser = result.user;
+      console.log(LoggedUser);
+      navigate(from, {replace: true})
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   return (
     <>
       <div className="container reg-main-div">
@@ -11,7 +33,7 @@ const Login = () => {
           alt="" />
         <div>
           <h1>Login</h1>
-          <Form>
+          <Form onSubmit={handleLogin}>
             
           <div className="d-flex flex-row align-items-center justify-content-center mb-4 justify-content-lg-start">
                   <p className="lead fw-normal mb-0 me-3">Sign in with</p>
