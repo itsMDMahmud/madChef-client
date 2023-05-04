@@ -4,6 +4,8 @@ import { useReactToPrint } from 'react-to-print';
 import AllChef from "../AllChef/AllChef";
 import { useLoaderData } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import MultiCarousel from "../MultiCarousel/MultiCarousel";
+import Gallery from "../Gallery/Gallery";
 
 
 const Home = () => {
@@ -68,7 +70,20 @@ const Home = () => {
           </Col>
         </Row>        
       </Container>
-      
+
+
+
+      <div className="multi-carousel">
+        <MultiCarousel/>
+      </div>
+
+
+      <div className="gallery container mt-5 mb-0">
+        <h1 className="text-center mb-4">Image gallery</h1>
+        <Gallery/>
+      </div>
+
+
 
       <section className="container chef-section">
         <h1 className="text-center my-5">Top American Chefs</h1>

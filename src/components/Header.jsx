@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
       {["sm"].map((expand) => (
-        <Navbar key={expand} bg="" expand={expand} className="mb-3 px-5 d-flex align-items-center justify-content-center">
+        <Navbar key={expand} bg="" expand={expand} className="mb-3 container d-flex align-items-center justify-content-center">
           <Container fluid>
             <Navbar.Brand> <NavLink to='/' ><h1>MadChef</h1></NavLink> </Navbar.Brand>
             <Navbar.Toggle
