@@ -24,10 +24,7 @@ const Home = () => {
     .then((data) => setAllData(data));
    }, []);
 
-  const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  })
+  
 
   // const allData = useLoaderData();
   //   console.log(allData);
@@ -41,9 +38,9 @@ const Home = () => {
   return (
     <>
     <div  className="container d-flex align-items-center justify-content-center" >
-      <Button className="d-flex align-items-center" onClick={handlePrint} >download Pdf</Button>
+      
     </div>
-      <div className="" ref={componentRef}>
+      <div className="" >
       
       <div className="carousel-flyer container">
       <img className="first-img" src="https://i.ibb.co/1K8cFQ7/long-flyer-2.jpg" alt="" />

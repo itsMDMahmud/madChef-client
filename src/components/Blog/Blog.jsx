@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./blog.css";
+import { useReactToPrint } from "react-to-print";
+import { Button } from "react-bootstrap";
 
 const Blog = () => {
+
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
   return (
-    <>
-      <div className="blog-div text-dark">
+    <div className="container d-flex flex-column align-content-center  justify-content-center">
+    <Button className="w-5" onClick={handlePrint} >download Pdf</Button>
+      <div ref={componentRef}>
+      <div className="mt-5 text-dark">
         <h2>Differences between uncontrolled and controlled components?</h2>
         <p>
           Controlled components are those that are designed to be actively
@@ -53,7 +62,8 @@ const Blog = () => {
         You might create a custom hook in React when you find yourself writing the same code over and over again across different components. By extracting this code into a custom hook, you can reuse the logic and stateful behavior across your application and make your code more modular and reusable. Custom hooks can also help to make your code more readable and maintainable by encapsulating complexity and making your components more focused and declarative.
         </p>
       </div>
-    </>
+      </div>
+    </div>
   );
 };
 

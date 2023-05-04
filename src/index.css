@@ -9,6 +9,14 @@ body {
   /* background-color: #081b29; */
   color: black;
 }
+.heading{
+  text-decoration: none;
+  font-weight: bolder;
+  background-image: linear-gradient( to right, #081b29, #578fe9);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  
+}
 .carousel-flyer{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -55,6 +63,9 @@ footer{
 }
 .reg-main-div img{
   max-width: 100%;
+}
+.form-section{
+  
 }
 
 

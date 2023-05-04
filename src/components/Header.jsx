@@ -26,7 +26,7 @@ const Header = () => {
       {["sm"].map((expand) => (
         <Navbar key={expand} bg="" expand={expand} className="mb-3 container d-flex align-items-center justify-content-center">
           <Container fluid>
-            <Navbar.Brand> <NavLink to='/' ><h1>MadChef</h1></NavLink> </Navbar.Brand>
+            <Navbar.Brand> <NavLink to='/' className='heading' ><h1>MadChef</h1></NavLink> </Navbar.Brand>
             <Navbar.Toggle
               className=""
               aria-controls={`offcanvasNavbar-expand-${expand}`}> <FaTh/> </Navbar.Toggle>
@@ -42,9 +42,9 @@ const Header = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <nav className="justify-content-center d-flex flex-grow-1 pe-3">
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2' : 'fs-4 mx-2')} to="/">Home </NavLink>                
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="/blog">Blog </NavLink>     
-                <NavLink className={({isActive}) => (isActive ? 'fs-4 mx-2 text-fs-4 mx-2 ' : 'fs-4 mx-2')} to="">About us </NavLink>     
+                <NavLink className="fs-4 mx-2" exact activeClassName="active" to="/"> Home </NavLink>                
+                <NavLink className="fs-4 mx-2" activeClassName="active" to="/blog"> Blog </NavLink>     
+                <NavLink className="fs-4 mx-2" activeClassName="active" to="https://www.facebook.com/itsMDMahmud">About</NavLink>     
                 
                 </nav>                
               </Offcanvas.Body>
@@ -74,28 +74,3 @@ export default Header;
 //<NavLink className="fs-4 mx-2" to=""> Blog </NavLink>
 //<NavLink className="fs-4 mx-2" to=""> Link </NavLink>
 
-//  <div style={{ position: "relative", display: "inline-block" }}>
-// <img src={props.src} alt={props.alt}
-// onMouseEnter={handleMouseEnter}
-// onMouseLeave={handleMouseLeave}
-// style={{ width: "100%", height: "auto" }}
-// />
-// {showTooltip && (
-// <div
-//   style={{
-//     position: "absolute",
-//     top: "100%",
-//     left: "50%",
-//     transform: "translateX(-50%)",
-//     backgroundColor: "black",
-//     color: "white",
-//     padding: "5px",
-//     borderRadius: "5px",
-//     whiteSpace: "nowrap",
-//     zIndex: "1",
-//   }}
-// >
-//   {props.userName}
-// </div>
-// )}
-// </div>
