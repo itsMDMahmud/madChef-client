@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import AllChef from "../AllChef/AllChef";
 import { Link, useLoaderData } from "react-router-dom";
@@ -11,14 +11,33 @@ import VideoSlider from "../VideoSlider/VideoSlider";
 
 
 const Home = () => {
+  const [allData, setAllData] = useState([]);
+  const [visible, setVisible] = useState(3);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 6);
+  }
+
+  useEffect(() => {
+    fetch('https://madchef-server-itsmdmahmud.vercel.app/chefdata')
+    .then((res) => res.json())
+    .then((data) => setAllData(data));
+   }, []);
+
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   })
 
-  const allData = useLoaderData();
-
+  // const allData = useLoaderData();
   //   console.log(allData);
+
+  const [hideButton, setHideButton] = useState(false);
+
+  const handleHide = () => {
+    setHideButton(true);
+  };
+
   return (
     <>
     <div  className="container d-flex align-items-center justify-content-center" >
@@ -26,7 +45,7 @@ const Home = () => {
     </div>
       <div className="" ref={componentRef}>
       
-      <div className="carouser-flyer container">
+      <div className="carousel-flyer container">
       <img className="first-img" src="https://i.ibb.co/1K8cFQ7/long-flyer-2.jpg" alt="" />
           
           <section className="my-5 container" >
@@ -92,10 +111,17 @@ const Home = () => {
       <section className="container chef-section">
         <h1 className="text-center my-5">Top American Chefs</h1>
         <div className="all-chefs">
-          {allData.map((singleChef) => (
+          {allData.slice(0, visible).map((singleChef) => (
             <AllChef key={singleChef.id} singleChef={singleChef}></AllChef>
           ))}
         </div>
+        <div className="see-all-btn-div"> 
+        {!hideButton && (
+          <Button onClick={() => { showMoreItems(); handleHide(); }}>See more</Button>
+        )}
+        
+        </div>
+        
       </section>
       </div>
     </>
@@ -103,4 +129,3 @@ const Home = () => {
 };
 
 export default Home;
-//<button className="chef-details btn btn-info">View details</button>

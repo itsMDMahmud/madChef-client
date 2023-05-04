@@ -9,9 +9,14 @@ body {
   /* background-color: #081b29; */
   color: black;
 }
-.carouser-flyer{
+.carousel-flyer{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+.see-all-btn-div{
+  display: flex;
+  align-items: center;justify-content: center;
+  margin: 40px 0;
 }
 .header-img{
   width: 30px;
@@ -118,9 +123,10 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 0 auto;
+    gap: 0;
   }
   .chef-details {
-    margin: 30px 0;
+    /* margin: 30px 0; */
     padding: 20px 0;
     border-radius: 10px;
     display: flex;
@@ -129,6 +135,10 @@ footer{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   .chef-details {
+  }
+  .carousel-flyer{
+    display: flex;
+    flex-direction: column;
   }
 }
 /* #081b29 */

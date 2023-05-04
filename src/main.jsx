@@ -32,8 +32,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: () => fetch('https://madchef-server-itsmdmahmud.vercel.app/chefdata'),
+        element: <Home></Home>
       },
       {
         path: 'registration',
