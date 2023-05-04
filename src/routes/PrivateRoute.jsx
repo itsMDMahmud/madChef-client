@@ -7,9 +7,9 @@ import { Spinner } from 'react-bootstrap';
 const PrivateRoute = ({children}) => {
     const{user, loading} = useContext(AuthContext);
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
 
-    console.log('user in a private route', user);
+    // console.log('user in a private route', user);
     if(loading){
         return <Spinner animation="border" variant="secondary" />
     }

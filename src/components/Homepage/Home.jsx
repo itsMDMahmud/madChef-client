@@ -2,7 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import AllChef from "../AllChef/AllChef";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import MultiCarousel from "../MultiCarousel/MultiCarousel";
 import Gallery from "../Gallery/Gallery";
@@ -79,7 +79,8 @@ const Home = () => {
 
 
       <div className="gallery container mt-5 mb-0">
-        <h1 className="text-center mb-4">Image gallery</h1>
+        <Link to='/gallery'><h2 className="text-center text-dark mb-4">Image gallery</h2></Link>
+        <h5 className="text-center mb-3">Click image gallery to see more..</h5>
         <Gallery/>
       </div>
 

@@ -20,6 +20,7 @@ import ChefDetails from './components/ChefDetails/ChefDetails.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Terms from './components/Terms/Terms.jsx';
+import Gallery from './components/Gallery/Gallery.jsx';
 
 
 
@@ -53,7 +54,12 @@ const router = createBrowserRouter([
       {
         path: 'terms',
         element: <Terms></Terms>
-      }
+      },
+      {
+        path: 'gallery',
+        element: <Gallery></Gallery>
+      },
+
     ]
     
   },
