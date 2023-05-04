@@ -24,13 +24,11 @@ const Home = () => {
     <div  className="container d-flex align-items-center justify-content-center" >
       <Button className="d-flex align-items-center" onClick={handlePrint} >download Pdf</Button>
     </div>
-      <div ref={componentRef}>
-      <Container>
-        <Row>
-          <Col lg={3}>
-              <img className="first-img" src="https://i.ibb.co/1K8cFQ7/long-flyer-2.jpg" alt="" />
-          </Col>
-          <Col lg={6}>
+      <div className="" ref={componentRef}>
+      
+      <div className="carouser-flyer container">
+      <img className="first-img" src="https://i.ibb.co/1K8cFQ7/long-flyer-2.jpg" alt="" />
+          
           <section className="my-5 container" >
         <Carousel className="">
           <Carousel.Item interval={2000}>
@@ -63,15 +61,13 @@ const Home = () => {
               <h3>Fruits Rolls</h3>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel>        
+        </Carousel>   
+        <h4 className="quotes">“The food you eat can be either the safest and most powerful form of medicine or the slowest form of poison”  -Ann Wigmore.</h4>     
       </section>
-      <h4 className="quotes">“The food you eat can be either the safest and most powerful form of medicine or the slowest form of poison”  -Ann Wigmore.</h4>
-          </Col>
-          <Col lg={3}>
-          <img className="first-img" src="https://i.ibb.co/M6nPCLB/long-flyer-1.jpg" alt="" />
-          </Col>
-        </Row>        
-      </Container>
+      
+          
+          <img className="first-img" src="https://i.ibb.co/M6nPCLB/long-flyer-1.jpg" alt="" />  
+      </div>      
 
 
 
