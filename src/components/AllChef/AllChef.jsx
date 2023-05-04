@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const AllChef = ({singleChef}) => {
@@ -9,7 +10,8 @@ const AllChef = ({singleChef}) => {
 
   return (
     <div className="chef-details" key={id}>
-      <img className="" src={img} alt="img" />
+      <LazyLoad height={300} width={300} threshold={1}><img className="" src={img} alt="img" /></LazyLoad>
+      
       <h3>{name}</h3>
       <p>Experience: {experience_years} years</p>
       <p>Numburs of recipe: 3</p>
