@@ -6,6 +6,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import MultiCarousel from "../MultiCarousel/MultiCarousel";
 import Gallery from "../Gallery/Gallery";
+import VideoSlider from "../VideoSlider/VideoSlider";
+
 
 
 const Home = () => {
@@ -84,6 +86,11 @@ const Home = () => {
         <Gallery/>
       </div>
 
+
+
+      <div className="container">
+        <VideoSlider></VideoSlider>
+      </div>
 
 
       <section className="container chef-section">
