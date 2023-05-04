@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5500/chefdata'),
+        loader: () => fetch('https://madchef-server-itsmdmahmud.vercel.app/chefdata'),
       },
       {
         path: 'registration',

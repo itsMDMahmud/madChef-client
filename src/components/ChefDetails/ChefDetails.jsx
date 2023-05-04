@@ -12,7 +12,7 @@ const ChefDetails = () => {
   const [chefDetails, setChefDetails] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5500/chefdata")
+    fetch("https://madchef-server-itsmdmahmud.vercel.app/chefdata")
       .then((res) => res.json())
       .then((data) => {
         if (data) {
